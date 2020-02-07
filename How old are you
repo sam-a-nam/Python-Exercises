@@ -1,0 +1,12 @@
+def x(help):
+    return int(input(help))
+
+age = x('How old are you? ' )
+if age <= 18:
+    school = x('What grade are you in? ')
+    print('You are age %s' %age)
+    print('You are in grade %s' %school)
+elif age >= 117:
+    print("I don't believe you")
+else:
+    print('You are an adult:(')
