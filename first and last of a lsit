@@ -1,0 +1,11 @@
+import random as rand
+
+def rand_list():
+    r = (rand.sample(range(1,10),rand.randint(1,10)))
+    print('Random list is {}'.format(r))
+    return r
+def fandL(r):
+    x = [r[0],r[-1]]
+    return x
+c = fandL(rand_list())
+print(c)
