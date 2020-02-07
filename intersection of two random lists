@@ -1,0 +1,17 @@
+import random
+
+start = 1
+stop = 100
+minlim = 1 
+maxlim = 100
+a = [random.randint(start, stop) for int in range(minlim,maxlim)]
+print(a)
+
+start1 = 1
+stop1 = 100
+minlim1 = 1 
+maxlim1 = 100
+b = [random.randint(start1, stop1) for int in range(minlim1,maxlim1)]
+print(b)
+
+print(set(a).intersection(set(b)))
