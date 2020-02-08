@@ -1,0 +1,31 @@
+def q(help):
+    return (input(help))
+
+def is_prime(num):
+    if num == 0:
+        print('0 is not a valid number.')
+        return False        
+    if num < 2:
+        print('%s is not a prime number' %num)
+        return False        
+    
+    x = range(2,num)
+
+    for elem in x:
+        if num % elem == 0:
+            print('%s is not a  prime number' %num)
+            return False
+    print('%s is a  prime number' %num)
+    return True
+
+
+num1 = q('Enter a number: ')
+
+while True:
+    try:
+        n = int(num1)
+        break
+    except:
+        num1 = input('Please enter a numerical number: ')
+        
+is_prime(n) 
