@@ -1,0 +1,30 @@
+
+
+def q(help):
+    return float(input(help))
+
+annual_salary = q('What is your annual salary? $')    
+monthly_salary = annual_salary / 12
+
+portion_saved = q('What percent will you save? Please enter in decimal form. ')
+
+total_cost = q('And what is the cost of your dream house? $')
+portion_down_payment = total_cost * .25
+
+print('This is the cost of a down payment on your dream house:',portion_down_payment)
+
+monthly_saved = monthly_salary * portion_saved
+current_savings = 0
+months = 0
+
+
+while current_savings <= portion_down_payment:  
+    y = monthly_saved*months
+    x = y*(.04/12)
+    current_savings = y + x
+    months = months + 1
+
+months = months - 1
+print('It will take you %s months to save up for your dream house!' %months)
+
+
