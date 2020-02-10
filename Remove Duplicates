@@ -1,0 +1,11 @@
+def remove_dups(a,b):
+    copy_a = a[::]
+    for elem in copy_a:
+        if elem in b:
+            a.remove(elem)
+    return a
+    
+d = [1,2,3,4,5,6,7,8,9]
+c = [2,4,6,8]            
+e = remove_dups(d,c)
+print(e)
