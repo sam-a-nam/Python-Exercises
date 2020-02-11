@@ -1,5 +1,3 @@
-
-
 def q(help):
     return float(input(help))
 
@@ -18,13 +16,10 @@ current_savings = 0
 months = 0
 
 
-while current_savings <= portion_down_payment:  
-    y = monthly_saved*months
-    x = y*(.04/12)
-    current_savings = y + x
-    months = months + 1
+while current_savings < portion_down_payment:  
+    current_savings += current_savings*(.04/12)
+    current_savings += monthly_saved
+    months += 1
 
-months = months - 1
+
 print('It will take you %s months to save up for your dream house!' %months)
-
-
