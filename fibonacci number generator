@@ -1,0 +1,25 @@
+#Write a program that asks the user how many Fibonnaci numbers to generate and then generates them. 
+
+k = int(input('Enter a number: '))
+
+def fib(n):
+    if n == 0:
+        return []
+    elif n == 1:
+        return [1]
+    elif n ==2:
+        return [1,1]
+    elif n>2:
+        fib = [1,1]
+        while n>2:
+            fib.append(fib[-1] + fib[-2])
+            n = n - 1
+        return fib
+    else:
+        print('Invalid input')
+    
+y = fib(k)
+print(y)
+
+    
+    
