@@ -1,0 +1,91 @@
+current_salary = 150000
+monthly_salary = current_salary / 12
+semi_annual_raise = .07
+roi_annual = .04
+roi_monthly = .04/12
+down_payment_rate = .25
+house_cost = 1000
+down_payment = down_payment_rate * house_cost
+month_limit = 36
+monthCounter = 0
+iterationCounter = 1
+current_savings = 0
+l= 0
+h = 10000
+
+while abs(l - h) > 1:
+    savings_rate = (l + h)/2/10000
+    current_savings += current_savings*roi_monthly
+    monthly_saved = monthly_salary*savings_rate
+    current_savings += monthly_saved
+    monthCounter += 1
+    if monthCounter % 6 == 0:
+        monthly_salary += monthly_salary * semi_annual_raise
+        
+    if monthCounter > month_limit:
+        monthCounter = 0
+        current_savings = 0 
+        iterationCounter += 1
+        l = savings_rate * 10000
+        
+    elif monthCounter < month_limit:
+        monthCounter = 0
+        current_savings = 0 
+        iterationCounter += 1
+        h = savings_rate * 10000   
+
+    elif current_savings < down_payment - 100:
+        monthCounter = 0
+        current_savings = 0
+        iterationCounter += 1
+        l = savings_rate*10000 
+    elif current_savings > down_payment + 100:
+        monthCounter = 0
+        current_savings = 0
+        iterationCounter += 1
+        h = savings_rate*10000
+    else:
+        print(savings_rate)
+        print(iterationCou)
+
+
+
+   
+
+def bisection(low, high):
+    global iterationCounter, roi_monthly, monthly_salary, semi_annual_raise, current_savings, monthCounter, month_limit
+    while current_savings < down_payment:
+        savings_rate = (high + low)/2/10000
+        current_savings += current_savings*roi_monthly
+        monthly_saved = monthly_salary*savings_rate
+        current_savings += monthly_saved
+        monthCounter += 1
+        if monthCounter % 6 == 0:
+            monthly_salary += monthly_salary * semi_annual_raise
+    if monthCounter > month_limit:
+        monthCounter = 0
+        current_savings = 0 
+        iterationCounter += 1
+        low = savings_rate * 10000
+        bisection(low, high)
+    elif monthCounter < month_limit:
+        monthCounter = 0
+        current_savings = 0 
+        iterationCounter += 1
+        high = savings_rate * 10000     
+        bisection(low, high)
+    elif current_savings < down_payment - 100:
+        monthCounter = 0
+        current_savings = 0
+        iterationCounter += 1
+        low = savings_rate*10000 - 1
+        bisection(low,high)
+    elif current_savings > down_payment + 100:
+        monthCounter = 0
+        current_savings = 0
+        iterationCounter += 1
+        high = savings_rate*10000 + 1
+        bisection(low,high)
+    else:
+        return savings_rate
+        return iterationCounter
