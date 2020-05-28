@@ -1,0 +1,16 @@
+from datetime import datetime
+from datetime import date
+
+def difference(d1,d2):
+    date1 = datetime.strptime(date1, "%Y-%m-%d")
+    date2 = datetime.strptime(date2, "%Y-%m-%d")
+    return abs((date2 - date1).days)
+
+birthday = str(input("What's your birthday? Enter in the format yyyy-mm-dd: "))
+
+today_unform = date.today()
+today = today_unform.strftime("%Y-%m-%d")
+
+x = (difference(today,birthday))
+
+print("You have been alive for " + str(x) + " days!")
